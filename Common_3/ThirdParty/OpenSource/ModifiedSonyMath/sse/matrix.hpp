@@ -1222,7 +1222,7 @@ inline const Matrix4 Matrix4::lookAt(const Point3 & eyePos, const Point3 & lookA
     Matrix4 m4EyeFrame;
     Vector3 v3X, v3Y, v3Z;
     v3Y = normalize(upVec);
-    v3Z = normalize((eyePos - lookAtPos));
+    v3Z = normalize((lookAtPos - eyePos));
     v3X = normalize(cross(v3Y, v3Z));
     v3Y = cross(v3Z, v3X);
     m4EyeFrame = Matrix4(Vector4(v3X), Vector4(v3Y), Vector4(v3Z), Vector4(eyePos));
