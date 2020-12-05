@@ -232,7 +232,7 @@ void Log::Write(uint32_t level, const char * filename, int line_number, const ch
 
 	// Prepare indentation
 	uint32_t indentation = pLogger->mIndentation * INDENTATION_SIZE_LOG;
-	memset(Buffer+preable_end, ' ', indentation);
+	memset(Buffer+preable_end, ' ', indentation + LOG_LEVEL_SIZE);
 
 	uint32_t offset = preable_end + LOG_LEVEL_SIZE + indentation;
 	va_list args;
